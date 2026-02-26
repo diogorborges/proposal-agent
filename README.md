@@ -1,36 +1,37 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Proposal Agent
 
-## Getting Started
+AI-powered agentic workflow that transforms discovery call transcripts into polished sales proposals in minutes.
 
-First, run the development server:
+Built for the Lumenalta Hackathon — March 2026.
+
+## What it does
+
+1. **Upload** — paste a discovery call transcript (Fellow, Zoom, Teams, Gong)
+2. **Brief** — Claude extracts 8 key fields automatically; flags missing ones in real time
+3. **Generate** — produces a deck outline, talk track, and FAQ grounded in past proposals
+4. **Review** — human checkpoint before anything is finalized
+5. **Output** — download all 3 deliverables; saved to output library with auto-tags
+
+## Running locally
 
 ```bash
+git clone https://github.com/diogorborges/proposal-agent
+cd proposal-agent
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+**You will be prompted to enter an Anthropic API key on first load.**
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- Get one at [console.anthropic.com](https://console.anthropic.com) → API Keys → Create Key
+- You need to add a credit card and at least $5 in credits (no free tier for the API)
+- The key is stored only in your browser's localStorage — never sent to any server other than Anthropic directly
 
-## Learn More
+## Stack
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Framework:** Next.js 14 (App Router)
+- **AI:** Claude via Anthropic SDK (streaming)
+- **UI:** Tailwind CSS
+- **State:** localStorage (no database)
