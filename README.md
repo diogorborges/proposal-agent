@@ -35,3 +35,7 @@ Open [http://localhost:3000](http://localhost:3000).
 - **AI:** Claude via Anthropic SDK (streaming)
 - **UI:** Tailwind CSS
 - **State:** localStorage (no database)
+
+## Demo
+
+https://www.loom.com/share/d19459bdfd9d42029a82a80c06b789ec
